@@ -1,4 +1,5 @@
 import { projects } from "@/lib/data";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -22,8 +23,23 @@ export default async function ProjectPage({ params }: Props) {
             <h1> { project.title } </h1>
             <p> { project.description } </p>
             <p> { project.tech?.join(' . ') } </p>
-            <p> { project.github } </p>
-            <p> { project.live } </p>
+
+            { project.screenshots?.map((img) => (
+                <Image key={img} src={`/projects/${project.slug}/${img}`} alt={project.title} width={400} height={300}/>
+            ))}
+
+            <ul>
+                {project.features?.map((feat) =>
+                    <li key={feat}>{feat}</li>
+                )}
+            </ul>
+            <a href={ project.github } target="_blank"> Github </a>
+            { project.live && (
+                <a href={project.live} target="_blank"> Live Demo </a>
+            )}
+
+            <img alt="" />
+
         </div>
     );
 }

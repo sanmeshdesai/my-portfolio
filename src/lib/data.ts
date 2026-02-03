@@ -1,3 +1,4 @@
+
 export const projects = [
     {
         title: "Forever - E-commerce Platform",
@@ -6,6 +7,8 @@ export const projects = [
         tech: ['React','Node.js','MongoDB'],
         github: "https://github.com/sanmeshdesai/forever-ecommerce-platform",
         live: "https://forever-ecommerce-platform-zeta.vercel.app/",
+        features: ["JWT based authentcation","Role-based Access","Product Management","Payment Integration"],
+        screenshots: ["home.png","listing.png","collection.png"],
         featured: true
     },
 
@@ -14,7 +17,9 @@ export const projects = [
         slug: "auth-system",
         description: "Authentication system with OTP verification, JWT-based sessions, and role-based access control.",
         tech: ['React','Node.js','MongoDB'],
-        github: "https://github.com/sanmeshdesai/fmern-auth",
+        github: "https://github.com/sanmeshdesai/mern-auth",
+        features: ["OTP Email verification", "OAuth Login", "Role based access"],
+        screenshots: ["home.png"],
         featured: true
     },
     
