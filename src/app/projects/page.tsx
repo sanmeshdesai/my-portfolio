@@ -1,5 +1,16 @@
-export default function Projects() {
+import { projects } from "@/lib/data";
+import Link from "next/link";
+
+export default async function Projects() {
     return(
-        <h1>Projects</h1>
+        <div>
+            <h1>Projects</h1>
+            { projects.map(p => (
+                <div key={p.slug}>
+                    <Link href={`/projects/${p.slug}`}>{p.title}</Link>
+                </div>
+            )) }
+        </div>
+
     );
 }
